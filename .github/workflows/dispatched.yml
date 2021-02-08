@@ -3,7 +3,7 @@ env:
   DEPLOY: "Shell simple workflow"
 on:
   repository_dispatch:
-    types: [woo-hoo]
+    types: [user-defined-event]
 jobs:
   test-shell:
     name: Run an ls to show files LOCAL

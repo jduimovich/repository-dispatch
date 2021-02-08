@@ -11,6 +11,6 @@ jobs:
         id: dispatch
         with:
           github-token: a-token
-          event-to-dispatch: an-event-to-dispatch
+          event-to-dispatch: user-defined-event
       - name: Result from the signal
         run: echo "Result ${{ steps.dispatch.outputs.result }}"
