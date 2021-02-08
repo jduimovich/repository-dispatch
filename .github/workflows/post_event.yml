@@ -1,0 +1,15 @@
+on: [push] 
+jobs:
+  test_locally_trigger:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps: 
+      - name: Checkout to test
+        uses: actions/checkout@v2
+      - name: Run local action
+        uses: ./  
+        id: dispatch
+        with:
+          event-to-dispatch: woo-hoo
+      - name: Result from the signal
+        run: echo "Result ${{ steps.dispatch.outputs.result }}"

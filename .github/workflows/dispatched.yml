@@ -1,0 +1,17 @@
+name: Simple Shell on openshift runner
+env:    
+  DEPLOY: "Shell simple workflow"
+on:
+  repository_dispatch:
+    types: [woo-hoo]
+jobs:
+  test-shell:
+    name: Run an ls to show files LOCAL
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2   
+    - name: Shell test 
+      run: |  
+        ls -al 
+
+ 

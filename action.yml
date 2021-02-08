@@ -1,0 +1,16 @@
+# action.yml
+name: 'Dispatch Event'
+description: 'this will dispatch a repository event'
+inputs:
+  event-to-dispatch:  
+    description: 'event-to-dispatch'
+    required: true
+    default: 'error'
+outputs:
+  result: 
+    description: 'The result of the dispatch'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.event-to-dispatch }}
