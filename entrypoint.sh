@@ -25,8 +25,8 @@ D="{'event_type': '$2'}"
 echo "$D" >payload.json 
 H1="Authorization: Bearer $1" 
 
-echo curl --request POST  --header $H1 --data  @payload.json ---url $URL
-curl --request POST  --header $H1 --data  @payload.json ---url $URL
+echo curl --request POST  --header $H1 --data  @payload.json --url $URL
+curl --request POST  --header $H1 --data  @payload.json --url $URL
   
 RESULT="RAN"
 echo "::set-output name=result::$RESULT"
