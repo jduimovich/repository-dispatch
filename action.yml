@@ -2,6 +2,10 @@
 name: 'Dispatch Event'
 description: 'this will dispatch a repository event'
 inputs:
+  github-token:  
+    description: 'github-token'
+    required: true
+    default: 'error'
   event-to-dispatch:  
     description: 'event-to-dispatch'
     required: true
@@ -13,4 +17,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - ${{ inputs.github-token }}
     - ${{ inputs.event-to-dispatch }}
