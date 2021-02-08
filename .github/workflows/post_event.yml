@@ -10,6 +10,7 @@ jobs:
         uses: ./  
         id: dispatch
         with:
-          event-to-dispatch: woo-hoo
+          github-token: a-token
+          event-to-dispatch: an-event-to-dispatch
       - name: Result from the signal
         run: echo "Result ${{ steps.dispatch.outputs.result }}"
