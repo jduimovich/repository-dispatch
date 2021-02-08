@@ -13,7 +13,8 @@ then
 else
    echo "PARAM1 Exists" as $1 
 fi
-  
+curl https://northdepot.ca
+
 RESULT="this worked"
 echo "::set-output name=result::$RESULT"
 
