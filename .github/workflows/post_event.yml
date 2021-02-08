@@ -10,7 +10,7 @@ jobs:
         uses: ./  
         id: dispatch
         with:
-          github-token: a-token
+          github-token: ${{ secrets.MY_TOKEN }}  
           event-to-dispatch: user-defined-event
       - name: Result from the signal
         run: echo "Result ${{ steps.dispatch.outputs.result }}"

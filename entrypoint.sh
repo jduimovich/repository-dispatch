@@ -27,7 +27,7 @@ H1="Authorization: Bearer $PAT"
 H2="Accept: 'application/vnd.github.v3+json'"
 H3="Content-Type: 'application/json'"
 
-echo curl -d $D -H $H1 -H $H2 -H $H3 -X POST $URL
+curl -d $D -H $H1 -H $H2 -H $H3 -X POST $URL
 
 RESULT="RAN"
 echo "::set-output name=result::$RESULT"
