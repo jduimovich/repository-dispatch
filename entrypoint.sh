@@ -19,17 +19,14 @@ else
    echo "event_type exists" as $2 
 fi
 
-URL="https://api.github/com/repos/$GITHUB_REPOSITORY/dispatches"
-PAT=$1
+URL=https://api.github/com/repos/$GITHUB_REPOSITORY/dispatches
+ 
 D="{'event_type': '$2'}"
-echo "$D" >payload.json
+echo "$D" >payload.json 
+H1="Authorization: Bearer $1" 
 
-H1="Authorization: Bearer $PAT" 
-
-curl --request POST \
-  --url $URL \
-  --header $H1 \
-  --data  @payload.json
+echo curl --request POST  --header $H1 --data  @payload.json ---url $URL
+curl --request POST  --header $H1 --data  @payload.json ---url $URL
   
 RESULT="RAN"
 echo "::set-output name=result::$RESULT"
