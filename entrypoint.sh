@@ -19,7 +19,7 @@ else
    echo "event_type exists" as $2 
 fi
 
-URL=https://api.github/com/repos/$GITHUB_REPOSITORY/dispatches
+URL="https://api.github/com/repos/$GITHUB_REPOSITORY/dispatches"
 PAT=$1
 D="{'event_type': '$2'}"
  
@@ -27,7 +27,7 @@ H1="Authorization: Bearer $PAT"
 H2="Accept: 'application/vnd.github.v3+json'"
 H3="Content-Type: 'application/json'"
 
-curl -d $D -H $H1 -H $H2 -H $H3 -X POST $URL
+echo curl -d "$D" -H "$H1" -H "$H2" -H "$H3" -X POST $URL
 
 RESULT="RAN"
 echo "::set-output name=result::$RESULT"
