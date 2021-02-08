@@ -22,13 +22,15 @@ fi
 URL="https://api.github/com/repos/$GITHUB_REPOSITORY/dispatches"
 PAT=$1
 D="{'event_type': '$2'}"
- 
-H1="Authorization: Bearer $PAT"
-H2="Accept: 'application/vnd.github.v3+json'"
-H3="Content-Type: 'application/json'"
+echo "$D" >payload.json
 
-echo curl -d "$D" -H "$H1" -H "$H2" -H "$H3" -X POST $URL
+H1="Authorization: Bearer $PAT" 
 
+curl --request POST \
+  --url $URL \
+  --header $H1 \
+  --data  @payload.json
+  
 RESULT="RAN"
 echo "::set-output name=result::$RESULT"
 
