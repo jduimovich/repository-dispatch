@@ -21,7 +21,7 @@ fi
 
 URL=https://api.github/com/repos/$GITHUB_REPOSITORY/dispatches
 PAT=$1
-D='{"event_type":"$2"}' 
+D="{'event_type': $2}"
  
 H1="Authorization: Bearer $PAT"
 H2="Accept: 'application/vnd.github.v3+json'"

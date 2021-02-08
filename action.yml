@@ -5,11 +5,11 @@ inputs:
   github-token:  
     description: 'github-token'
     required: true
-    default: 'error'
+    default: 'missing-github-token'
   event-to-dispatch:  
     description: 'event-to-dispatch'
     required: true
-    default: 'error'
+    default: 'missing-event-to-dispatch'
 outputs:
   result: 
     description: 'The result of the dispatch'
