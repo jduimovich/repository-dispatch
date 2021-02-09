@@ -1,5 +1,5 @@
 #CI Test. This will pass when the user defined event is trigged by the CI Task
-name: name: CI Tests
+name: CI Tests
 on:
   repository_dispatch:
     types: [user-defined-event]
