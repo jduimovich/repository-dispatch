@@ -1,9 +1,7 @@
-# Container image that runs your code
+# Minimal curl tool needed 
 FROM alpine:3.10
 RUN apk add curl
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.sh /entrypoint.sh
-
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["/bin/sh", "/entrypoint.sh"]
+# Repository script can be run inside and shell or container (with curl)
+COPY repository-dispatch.sh /repository-dispatch.sh
+ENTRYPOINT ["/bin/sh", "/repository-dispatch.sh"]

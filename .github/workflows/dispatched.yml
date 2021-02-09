@@ -1,12 +1,10 @@
-name: Simple Shell on openshift runner
-env:    
-  DEPLOY: "Shell simple workflow"
+name: repository-dispatch action 
 on:
   repository_dispatch:
     types: [user-defined-event]
 jobs:
-  test-shell:
-    name: Run an ls to show files LOCAL
+  shell:
+    name: Simple shell to validate repository-dispatch
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2   
