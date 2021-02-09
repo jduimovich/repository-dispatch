@@ -5,7 +5,7 @@ on: [push]
 jobs:
   test_locally_trigger:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Triggers a workflow via a user-defined-event
     steps: 
       - name: Checkout to test
         uses: actions/checkout@v2
