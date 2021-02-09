@@ -7,17 +7,17 @@ else
 fi
 if [ "$1" = "" ]
 then
-   echo "token does not exist" 
+   echo "usage repository-dispatch ACCESS_TOKEN  EVENT_NAME" 
    exit 1
 else
    echo "Github Token Set "
 fi
 if [ "$2" = "" ]
-then
-   echo "event_type missing"
+then 
+   echo "usage repository-dispatch ACCESS_TOKEN  EVENT_NAME" 
    exit 1
 else
-   echo "event_type fired:" $2 
+   echo "event_type being fired:" $2 
 fi
 URL=https://api.github.com/repos/$GITHUB_REPOSITORY/dispatches
 echo '{"event_type":' '"'$2'"}' >payload.json 
