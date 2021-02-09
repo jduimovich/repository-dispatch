@@ -1,4 +1,4 @@
-"# repository-dispatch" 
+# repository-dispatch
 
 ![CI checks](https://github.com/jduimovich/repository-dispatch/workflows/CI%20checks/badge.svg)
 
