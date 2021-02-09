@@ -1,3 +1,6 @@
+#CI Test, phase 1. This test triggers the second workflow
+#Only create a badge when the second workflow passes
+name: CI-Phase-1 
 on: [push] 
 jobs:
   test_locally_trigger:
